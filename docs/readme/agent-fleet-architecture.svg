@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">TraceOS governed agent fleet architecture</title>
+  <desc id="desc">A human investigator delegates through a case coordinator to scoped specialist agents. Fleet Integrity validates evidence references, Independent Verification alone can write findings, and Reporting receives verified findings only.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#11100F"/><stop offset="1" stop-color="#181715"/></linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0L12 6L0 12Z" fill="#D7D1B0"/></marker>
+    <marker id="blueArrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0L12 6L0 12Z" fill="#79A9FF"/></marker>
+    <marker id="redArrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0L12 6L0 12Z" fill="#EF817B"/></marker>
+    <style>
+      .t{font-family:Arial,Helvetica,sans-serif;fill:#fff}.muted{fill:#D7D1B0}.blue{fill:#79A9FF}.green{fill:#82D7A0}.red{fill:#EF817B}.h1{font-size:44px;font-weight:800}.h2{font-size:27px;font-weight:800}.h3{font-size:20px;font-weight:700}.body{font-size:17px}.small{font-size:14px}.caps{font-size:14px;font-weight:700;letter-spacing:1.4px}.panel{fill:#201F1E;stroke:#5D5A55;stroke-width:2}.soft{fill:#171614;stroke:#3A3834;stroke-width:2}.special{fill:#252321;stroke:#77736B;stroke-width:1.5}.line{fill:none;stroke:#D7D1B0;stroke-width:4;marker-end:url(#arrow)}.bline{fill:none;stroke:#79A9FF;stroke-width:4;marker-end:url(#blueArrow)}
+    </style>
+  </defs>
+  <rect width="1600" height="900" rx="34" fill="url(#bg)"/>
+  <path d="M1300 -80A300 300 0 0 0 1580 260" fill="none" stroke="#252321" stroke-width="55" opacity=".65"/>
+  <text class="t h1" x="64" y="74">Governed agents, separated responsibilities</text>
+  <text class="t muted body" x="64" y="112">13 versioned manifests · typed handoffs · one authorized finding writer</text>
+
+  <rect class="panel" x="54" y="205" width="240" height="430" rx="24" stroke="#D7D1B0"/>
+  <circle cx="174" cy="282" r="48" fill="#D7D1B0"/><circle cx="174" cy="265" r="15" fill="#11100F"/><path d="M140 316Q174 274 208 316" fill="#11100F"/>
+  <text class="t h2" x="174" y="360" text-anchor="middle">Investigator</text>
+  <text class="t muted body" x="174" y="405" text-anchor="middle">Starts or resumes case</text>
+  <text class="t muted body" x="174" y="439" text-anchor="middle">Adds approved evidence</text>
+  <text class="t muted body" x="174" y="473" text-anchor="middle">Reviews proof + failures</text>
+  <text class="t muted body" x="174" y="507" text-anchor="middle">Chooses final response</text>
+  <rect x="82" y="551" width="184" height="54" rx="14" fill="#11100F"/><text class="t caps" x="174" y="584" text-anchor="middle">HUMAN CONTROL</text>
+
+  <path class="line" d="M294 395H349"/><text class="t small" x="322" y="372" text-anchor="middle">case goal</text>
+
+  <rect class="panel" x="364" y="220" width="260" height="330" rx="24" stroke="#79A9FF" stroke-width="3"/>
+  <text class="t blue caps" x="494" y="258" text-anchor="middle">GOOGLE ADK</text>
+  <text class="t h2" x="494" y="305" text-anchor="middle">Case Coordinator</text>
+  <text class="t muted body" x="494" y="344" text-anchor="middle">Resolves registry identities</text>
+  <text class="t muted body" x="494" y="376" text-anchor="middle">Delegates bounded tasks</text>
+  <text class="t muted body" x="494" y="408" text-anchor="middle">Creates checkpoints</text>
+  <text class="t muted body" x="494" y="440" text-anchor="middle">Resumes durable memory</text>
+  <rect x="398" y="474" width="192" height="49" rx="12" fill="#14291C" stroke="#82D7A0" stroke-width="2"/><text class="t green caps" x="494" y="505" text-anchor="middle">ASYNC + RESUMABLE</text>
+
+  <path class="bline" d="M624 365H674"/><text class="t blue small" x="649" y="341" text-anchor="middle">scoped task</text>
+  <rect class="panel" x="689" y="166" width="520" height="514" rx="24" stroke="#79A9FF" stroke-width="3"/>
+  <text class="t h2" x="725" y="210">Specialist observation plane</text>
+  <text class="t muted body" x="725" y="241">Workers can observe and test—never write findings.</text>
+
+  <g>
+    <rect class="special" x="724" y="276" width="211" height="78" rx="14"/><text class="t h3" x="746" y="309">Evidence Intake</text><text class="t muted small" x="746" y="335">hash + source validation</text>
+    <rect class="special" x="961" y="276" width="211" height="78" rx="14"/><text class="t h3" x="983" y="309">Visual Evidence</text><text class="t muted small" x="983" y="335">OCR + observable regions</text>
+    <rect class="special" x="724" y="374" width="211" height="78" rx="14"/><text class="t h3" x="746" y="407">Identity Analysis</text><text class="t muted small" x="746" y="433">account + access signals</text>
+    <rect class="special" x="961" y="374" width="211" height="78" rx="14"/><text class="t h3" x="983" y="407">Endpoint Analysis</text><text class="t muted small" x="983" y="433">device telemetry only</text>
+    <rect class="special" x="724" y="472" width="211" height="78" rx="14"/><text class="t h3" x="746" y="505">Network Analysis</text><text class="t muted small" x="746" y="531">DNS + network metadata</text>
+    <rect class="special" x="961" y="472" width="211" height="78" rx="14"/><text class="t h3" x="983" y="505">Timeline</text><text class="t muted small" x="983" y="531">approved event ordering</text>
+    <rect class="special" x="724" y="570" width="211" height="78" rx="14"/><text class="t h3" x="746" y="603">Hypothesis</text><text class="t muted small" x="746" y="629">falsifiable + evidence-linked</text>
+    <rect x="961" y="570" width="211" height="78" rx="14" fill="#2A201F" stroke="#EF817B" stroke-width="2"/><text class="t h3" x="983" y="603">Fleet Integrity</text><text class="t red small" x="983" y="629">reject bad evidence IDs</text>
+  </g>
+
+  <path class="bline" d="M1209 420H1260"/><text class="t blue small" x="1235" y="396" text-anchor="middle">observations</text>
+  <rect x="1275" y="218" width="270" height="252" rx="24" fill="#D7D1B0" stroke="#fff" stroke-width="3"/>
+  <circle cx="1410" cy="278" r="34" fill="#11100F"/><path d="M1390 278L1404 293L1431 260" fill="none" stroke="#D7D1B0" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="1410" y="341" text-anchor="middle" font-family="Arial" font-size="27" font-weight="800" fill="#11100F">Independent</text>
+  <text x="1410" y="373" text-anchor="middle" font-family="Arial" font-size="27" font-weight="800" fill="#11100F">Verification</text>
+  <text x="1410" y="414" text-anchor="middle" font-family="Arial" font-size="15" font-weight="700" fill="#11100F">ONLY FINDING-WRITE AUTHORITY</text>
+  <text x="1410" y="442" text-anchor="middle" font-family="Arial" font-size="14" fill="#201F1E">evidence + independent types required</text>
+
+  <path class="line" d="M1410 470V522"/><rect class="panel" x="1275" y="536" width="270" height="144" rx="22" stroke="#82D7A0" stroke-width="3"/>
+  <text class="t h2" x="1410" y="582" text-anchor="middle">Forensic Reporting</text>
+  <text class="t muted body" x="1410" y="618" text-anchor="middle">Verified findings + approved timeline</text>
+  <rect x="1313" y="639" width="194" height="26" rx="8" fill="#14291C"/><text class="t green small" x="1410" y="657" text-anchor="middle">NO RAW EVIDENCE ACCESS</text>
+
+  <rect class="soft" x="364" y="710" width="846" height="124" rx="22"/>
+  <text class="t caps" x="396" y="747">SHARED GOVERNANCE + STATE</text>
+  <text class="t h3" x="396" y="786">Agent Registry</text><text class="t muted small" x="396" y="811">version + discovery</text>
+  <text class="t h3" x="596" y="786">Agent Identity</text><text class="t muted small" x="596" y="811">least privilege</text>
+  <text class="t h3" x="796" y="786">Memory Bank</text><text class="t muted small" x="796" y="811">Firestore checkpoints</text>
+  <text class="t h3" x="996" y="786">Observability</text><text class="t muted small" x="996" y="811">traces + policy events</text>
+
+  <rect class="soft" x="1248" y="710" width="297" height="124" rx="22" stroke="#D7D1B0"/>
+  <text class="t caps" x="1272" y="746">ISOLATED TRAINING PLANE</text>
+  <text class="t h3" x="1272" y="786">Gemma → Veo → Lyria</text>
+  <text class="t red small" x="1272" y="814">No return path to evidence or findings</text>
+
+  <path d="M1238 603H1200V649H1152" fill="none" stroke="#EF817B" stroke-width="3" stroke-dasharray="10 9" marker-end="url(#redArrow)"/><text class="t red small" x="1188" y="696" text-anchor="end">unsupported or raw requests stop here</text>
+</svg>

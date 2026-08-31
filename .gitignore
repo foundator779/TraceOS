@@ -27,3 +27,8 @@ TraceOS_*_Demo_Package/
 dashboard.png
 tools/video-post/generated/
 tools/demo-recorder/narration-review/
+tools/demo-recorder/.edge-render-profile/
+
+# Private publication drafts (publish manually after final review)
+/DEVTO_POST_DRAFT.md
+/X_POST_DRAFT.txt
