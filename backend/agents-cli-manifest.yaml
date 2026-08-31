@@ -1,0 +1,5 @@
+name: traceos
+agent_directory: agents
+create_params:
+  deployment_target: agent_engine
+  session_type: vertex_ai

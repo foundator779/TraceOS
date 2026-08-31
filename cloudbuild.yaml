@@ -1,0 +1,27 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: ["build", "-t", "${_REGION}-docker.pkg.dev/$PROJECT_ID/traceos/app:$COMMIT_SHA", "."]
+  - name: gcr.io/cloud-builders/docker
+    args: ["push", "${_REGION}-docker.pkg.dev/$PROJECT_ID/traceos/app:$COMMIT_SHA"]
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - traceos
+      - --image=${_REGION}-docker.pkg.dev/$PROJECT_ID/traceos/app:$COMMIT_SHA
+      - --region=${_REGION}
+      - --platform=managed
+      - --allow-unauthenticated
+      - --service-account=traceos-runtime@$PROJECT_ID.iam.gserviceaccount.com
+      - --min-instances=0
+      - --max-instances=1
+      - --memory=512Mi
+      - --cpu=1
+      - --concurrency=40
+      - --set-env-vars=ENVIRONMENT=production,GOOGLE_CLOUD_PROJECT=$PROJECT_ID,GOOGLE_CLOUD_LOCATION=${_REGION},TRACEOS_STORE=firestore,ENABLE_CLOUD_CONNECTORS=true,ENABLE_MODEL_ARMOR=false,MODEL_ARMOR_TEMPLATE_ID=traceos-evidence,EVIDENCE_BUCKET=$PROJECT_ID-traceos-evidence,TRAINING_OUTPUT_BUCKET=$PROJECT_ID-traceos-training,TRAINING_PUBSUB_TOPIC=projects/$PROJECT_ID/topics/traceos-training-pack,TRAINING_BUDGET_USD=1.00,TRAINING_MAX_LIVE_RUNS=1,ENABLE_GEMMA_VERIFIER=false,ENABLE_VEO_TRAINING=false,ENABLE_LYRIA_TRAINING=false,GEMINI_MODEL=gemini-3.7-flash,GEMINI_VISION_MODEL=gemini-2.5-flash,GEMINI_LOCATION=global,GEMINI_USE_VERTEX=true,GOOGLE_CLOUD_AGENT_ENGINE_ID=4881831627325440000,GOOGLE_CLOUD_AGENT_ENGINE_LOCATION=northamerica-northeast1,AGENT_GATEWAY_STATUS=CONFIGURED
+      - --set-secrets=TRACEOS_API_KEY=traceos-api-key:latest
+substitutions:
+  _REGION: us-central1
+options:
+  logging: CLOUD_LOGGING_ONLY

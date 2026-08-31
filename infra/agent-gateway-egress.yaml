@@ -1,0 +1,7 @@
+name: traceos-egress
+protocols:
+  - MCP
+googleManaged:
+  governedAccessPath: AGENT_TO_ANYWHERE
+registries:
+  - //agentregistry.googleapis.com/projects/traceos-506713/locations/northamerica-northeast1

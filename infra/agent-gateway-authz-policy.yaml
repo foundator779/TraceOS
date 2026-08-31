@@ -1,0 +1,10 @@
+name: traceos-egress-authz
+target:
+  resources:
+    - projects/traceos-506713/locations/northamerica-northeast1/agentGateways/traceos-egress
+policyProfile: REQUEST_AUTHZ
+action: CUSTOM
+customProvider:
+  authzExtension:
+    resources:
+      - projects/traceos-506713/locations/northamerica-northeast1/authzExtensions/traceos-iap-dry-run

@@ -1,0 +1,57 @@
+{
+  "video_duration_seconds": 237.98,
+  "segments": [
+    {
+      "start": 0.4,
+      "text": "TraceOS is a zero-trust forensic control plane for autonomous enterprise investigations. It lets agents move fast without allowing unsupported conclusions."
+    },
+    {
+      "start": 9.5,
+      "text": "Evidence enters from a synthetic sign-in alert and authenticated Google Cloud audit records. The visual agent extracts only observable facts. Identity, endpoint, and network specialists test hypotheses, but none can create a finding. Every claim keeps a path to registered evidence. The unsupported claim stops at the red barrier, while independently verified evidence reaches the final finding."
+    },
+    {
+      "start": 43.0,
+      "text": "The fleet view exposes every approved agent, model, identity, tool, and scope. Specialists remain evidence-bounded, and only the independent verifier has finding-write authority."
+    },
+    {
+      "start": 64.0,
+      "text": "Back in the case, the activity feed records safe failures as clearly as successes. Raw evidence access remains denied, unsupported references are rejected, and saved memory resumes the investigation before later evidence updates the report."
+    },
+    {
+      "start": 87.0,
+      "text": "TraceOS produces a human-readable report using verified findings only. The exported case artifact preserves evidence references, confidence, and governance outcomes for review."
+    },
+    {
+      "start": 105.0,
+      "text": "After verification, TraceOS creates a one-way training pack. Gemma independently challenges the report's cited evidence. Veo generates a synthetic incident reconstruction, and Lyria creates a tabletop audio exercise. Every artifact is hashed, privately stored, labeled not evidence, and blocked from returning to the forensic record."
+    },
+    {
+      "start": 136.0,
+      "text": "Integrations clearly separate authenticated cloud records from synthetic demo connectors, with model invocation status persisted for audit."
+    },
+    {
+      "start": 150.0,
+      "text": "OpenTelemetry-compatible traces expose spans, policies, failures, and latency end to end."
+    },
+    {
+      "start": 160.0,
+      "text": "This architecture ties authenticated intake to governed execution, specialist analysis, independent verification, and one-way training outputs."
+    },
+    {
+      "start": 169.5,
+      "text": "Now for deployment proof. TraceOS runs in project traceos five zero six seven one three as a Cloud Run service in U.S. Central One. The ready revision receives one hundred percent of production traffic."
+    },
+    {
+      "start": 183.0,
+      "text": "Opening its public run dot app address loads the same interface and FastAPI backend shown throughout this demo."
+    },
+    {
+      "start": 191.0,
+      "text": "The health endpoint returns status O.K., and Cloud Run records the matching HTTP two hundred on the active revision. This proves the backend is live on Google Cloud."
+    },
+    {
+      "start": 206.0,
+      "text": "TraceOS also deploys its Google A.D.K. fleet to Gemini Enterprise Agent Platform. The managed TraceOS Forensics Fleet runs in North America Northeast One with Agent Identity and telemetry enabled. Its live Playground health check returns TraceOS Runtime O.K., proving that the managed Agent Runtime can receive and process requests."
+    }
+  ]
+}
